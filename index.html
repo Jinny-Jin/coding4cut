@@ -24,7 +24,7 @@
         }
         .container{
             width: 390px;
-            background-color: #ff9d73;
+            background-color: darkseagreen;
             height: 100%;
         }
         .photos{
@@ -84,11 +84,6 @@
 
             opacity: 0;
         }
-        .video{
-            width: 100%;
-            height: 100%;
-        }
-
         .showText{
             opacity: 0;
         }
@@ -109,9 +104,13 @@ function showText(number) {
   } else if (number === 2) {
     document.querySelector("#desc2").classList.remove("hideText");
     document.querySelector("#desc2").classList.add("showText");
-  } else {
+  } else if (number === 3) {
     document.querySelector("#desc3").classList.remove("hideText");
     document.querySelector("#desc3").classList.add("showText");
+  }
+    else {
+    document.querySelector("#desc4").classList.remove("hideText");
+    document.querySelector("#desc4").classList.add("showText");
   }
 }
 
@@ -125,9 +124,13 @@ function hideText(number) {
   } else if (number === 2) {
     document.querySelector("#desc2").classList.remove("showText");
     document.querySelector("#desc2").classList.add("hideText");
-  } else {
+  } else if(number === 3) {
     document.querySelector("#desc3").classList.remove("showText");
     document.querySelector("#desc3").classList.add("hideText");
+  }
+    else {
+    document.querySelector("#desc4").classList.remove("showText");
+    document.querySelector("#desc4").classList.add("hideText");
   }
 }
 
@@ -165,22 +168,21 @@ function alertText(number) {
 	        onclick="alertText(3)"
             >
                 <span id="desc3" class="photodes">
-                    2019 새해파티
+                    2019 새해기념
                 </span>
             </div>
             <div id="image4" class="photoframe"
-            
+            onmouseover="hideText(4)"
+	        onmouseout="showText(4)"
+	        onclick="alertText(4)"
             >
-                <iframe
-		            src="https://www.youtube.com/embed/TWz1btekxfs"
-                    frameborder="0"
-                    class="video"
-                    >
-                </iframe>
+                <span id="desc4" class="photodes">
+                    2018 대만여행
+                </span>
             </div>
         </div>
         <div class="footer">
-            <p class="ftitle">Happy Lunch Time</p>
+            <p class="ftitle">우리 언제 또 여행가냐</p>
             <p class="fdate">2022.02.18</p>
         </div>
     </div>
